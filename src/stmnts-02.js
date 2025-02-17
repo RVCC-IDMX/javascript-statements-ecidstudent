@@ -22,6 +22,7 @@
  */
 function absoluteDifference(a, b) {
   // Implementation goes here.
+  return Math.abs(a - b);
 }
 
 /**
@@ -33,6 +34,7 @@ function absoluteDifference(a, b) {
  */
 function power(base, exponent) {
   // Implementation goes here.
+  return base ** exponent;
 }
 
 /**
@@ -43,6 +45,7 @@ function power(base, exponent) {
  */
 function convertMinutesToSeconds(minutes) {
   // Implementation goes here.
+  return minutes * 60;
 }
 
 /**
@@ -53,6 +56,7 @@ function convertMinutesToSeconds(minutes) {
  */
 function convertHoursToSeconds(hours) {
   // Implementation goes here.
+  return hours * 3600;
 }
 
 // DO NOT MODIFY THE EXPORTS BELOW.

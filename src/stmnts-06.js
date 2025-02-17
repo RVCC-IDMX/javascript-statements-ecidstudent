@@ -20,6 +20,7 @@
  */
 function isString(str) {
   // Implementation goes here.
+  return typeof str === 'string';
 }
 
 /**
@@ -30,6 +31,7 @@ function isString(str) {
  */
 function isBlank(str) {
   // Implementation goes here.
+  return str === '';
 }
 
 /**
@@ -43,6 +45,11 @@ function isBlank(str) {
  */
 function sayHelloOrBye(name, num) {
   // Implementation goes here.
+  if (Number(num) === 0) {
+    return "Hello " + name;
+  } else {
+    return "Bye " + name;
+  }
 }
 
 /**
@@ -54,6 +61,7 @@ function sayHelloOrBye(name, num) {
  */
 function compareStrings(str1, str2) {
   // Implementation goes here.
+  return str1 === str2;
 }
 
 /* -------------------------------------------
@@ -68,6 +76,8 @@ function compareStrings(str1, str2) {
  */
 function isUpperCase(str) {
   // Implementation goes here.
+  if (!isString(str)) return false;
+  return str === str.toUpperCase();
 }
 
 /**
@@ -78,6 +88,8 @@ function isUpperCase(str) {
  */
 function isLowerCase(str) {
   // Implementation goes here.
+  if (!isString(str)) return false;
+  return str === str.toLowerCase();
 }
 
 /**
@@ -89,6 +101,8 @@ function isLowerCase(str) {
  */
 function hasLength(str, length) {
   // Implementation goes here.
+  if (!isString(str)) return false;
+  return str.length === length;
 }
 
 /**
@@ -100,6 +114,8 @@ function hasLength(str, length) {
  */
 function startsWithSubstring(str, prefix) {
   // Implementation goes here.
+  if (!isString(str) || !isString(prefix)) return false;
+  return str.startsWith(prefix);
 }
 
 /**
@@ -111,6 +127,8 @@ function startsWithSubstring(str, prefix) {
  */
 function endsWithSubstring(str, suffix) {
   // Implementation goes here.
+  if (!isString(str) || !isString(suffix)) return false;
+  return str.endsWith(suffix);
 }
 
 /**
@@ -122,6 +140,8 @@ function endsWithSubstring(str, suffix) {
  */
 function containsSubstring(str, substring) {
   // Implementation goes here.
+  if (!isString(str) || !isString(substring)) return false;
+  return str.includes(substring);
 }
 
 /**
@@ -131,6 +151,15 @@ function containsSubstring(str, substring) {
  */
 function isAlpha(str) {
   // Implementation goes here.
+  if (!isString(str) || str.length === 0) return false;
+  for (let i = 0; i < str.length; i++) {
+    let ch = str[i];
+    // Check if ch is an alphabetic character by verifying its ASCII range.
+    if (!((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))) {
+      return false;
+    }
+  }
+  return true;
 }
 
 /**
@@ -140,6 +169,14 @@ function isAlpha(str) {
  */
 function containsOnlyDigits(str) {
   // Implementation goes here.
+  if (!isString(str) || str.length === 0) return false;
+  for (let i = 0; i < str.length; i++) {
+    let ch = str[i];
+    if (!(ch >= '0' && ch <= '9')) {
+      return false;
+    }
+  }
+  return true;
 }
 
 /**
@@ -150,6 +187,8 @@ function containsOnlyDigits(str) {
  */
 function isEmptyOrWhitespace(str) {
   // Implementation goes here.
+  if (!isString(str)) return false;
+  return str.trim() === '';
 }
 
 // DO NOT EDIT THE FOLLOWING EXPORT STATEMENT.

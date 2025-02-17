@@ -19,6 +19,7 @@
  */
 function isInteger(value) {
   // Implementation goes here.
+  return typeof value === 'number' && Number.isInteger(value);
 }
 
 /**
@@ -29,6 +30,8 @@ function isInteger(value) {
  */
 function isOdd(num) {
   // Implementation goes here.
+  if (!isInteger(num)) return false;
+  return num % 2 !== 0;
 }
 
 /**
@@ -39,6 +42,8 @@ function isOdd(num) {
  */
 function isEven(num) {
   // Implementation goes here.
+  if (!isInteger(num)) return false;
+  return num % 2 === 0;
 }
 
 /**
@@ -49,6 +54,8 @@ function isEven(num) {
  */
 function isNegative(value) {
   // Implementation goes here.
+  if (!isInteger(value)) return false;
+  return value < 0;
 }
 
 /**
@@ -59,6 +66,8 @@ function isNegative(value) {
  */
 function isPositive(num) {
   // Implementation goes here.
+  if (!isInteger(num)) return false;
+  return num > 0;
 }
 
 /**
@@ -68,6 +77,8 @@ function isPositive(num) {
  */
 function isZero(num) {
   // Implementation goes here.
+  if (!isInteger(num)) return false;
+  return num === 0;
 }
 
 /**
@@ -77,6 +88,8 @@ function isZero(num) {
  */
 function isNonNegative(num) {
   // Implementation goes here.
+  if (!isInteger(num)) return false;
+  return num >= 0;
 }
 
 /**
@@ -88,6 +101,8 @@ function isNonNegative(num) {
  */
 function isDivisibleBy(a, b) {
   // Implementation goes here.
+  if (!isInteger(a) || !isInteger(b)) return false;
+  return b !== 0 && a % b === 0;
 }
 
 /**
@@ -100,6 +115,8 @@ function isDivisibleBy(a, b) {
  */
 function isBetween(num, min, max) {
   // Implementation goes here.
+  if (!isInteger(num) || !isInteger(min) || !isInteger(max)) return false;
+  return num >= min && num <= max;
 }
 
 /**
@@ -110,6 +127,10 @@ function isBetween(num, min, max) {
  */
 function isSquare(num) {
   // Implementation goes here.
+  if (!isInteger(num)) return false;
+  if (num < 0) return false;
+  const root = Math.sqrt(num);
+  return isInteger(root);
 }
 
 /**
@@ -120,6 +141,9 @@ function isSquare(num) {
  */
 function isCube(num) {
   // Implementation goes here.
+  if (!isInteger(num)) return false;
+  const cubeRoot = Math.cbrt(num);
+  return isInteger(cubeRoot);
 }
 
 // DO NOT EDIT THE FOLLOWING EXPORT STATEMENT.

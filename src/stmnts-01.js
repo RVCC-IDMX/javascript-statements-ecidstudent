@@ -21,6 +21,7 @@
  */
 function nextInteger(int) {
   // Implementation goes here.
+  return int + 1;
 }
 
 /**
@@ -32,6 +33,7 @@ function nextInteger(int) {
  */
 function times(a, b) {
   // Implementation goes here.
+  return a * b;
 }
 
 /**
@@ -43,6 +45,7 @@ function times(a, b) {
  */
 function add(a, b) {
   // Implementation goes here.
+  return a + b;
 }
 
 /**
@@ -54,6 +57,7 @@ function add(a, b) {
  */
 function subtract(a, b) {
   // Implementation goes here.
+  return a - b;
 }
 
 /**
@@ -65,6 +69,11 @@ function subtract(a, b) {
  */
 function divide(a, b) {
   // Implementation goes here.
+  if (b === 0) {
+    return NaN; // Division by zero returns NaN.
+  } else {
+    return a / b;
+  }
 }
 
 /**
@@ -76,6 +85,7 @@ function divide(a, b) {
  */
 function modulus(a, b) {
   // Implementation goes here.
+  return a % b;
 }
 
 // DO NOT CHANGE THE FOLLOWING EXPORT STATEMENT.
